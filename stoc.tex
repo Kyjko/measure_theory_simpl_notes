@@ -11,9 +11,11 @@
 \usepackage{tikz}
 
 \usetheme{CambridgeUS}
+\usecolortheme{crane}
+\usefonttheme{serif}
 
 \author{BOGNÁR Miklós}
-\title{Measure Theoretic View of Random Variables}
+\title{Homework 1}
 \begin{document}
 \maketitle
 \section{$\sigma$-algebras, measures and measurable functions}
@@ -159,14 +161,36 @@ then the second moment of the random variable is
 \]
 In general, the \emph{p-th moment} of $X$ is $\int_{\Omega}{X^pd\mathbb{P}}$ ($p>0$).
 \end{frame}
-\section{Variance of random variables}
+\section{Variance and covariance of random variables}
 \begin{frame}
-\frametitle{Variance of random variables}
+\frametitle{Variance and covariance of random variables}
 The \emph{variance} of a random variable is the expression
 \[
 	Var[X] \circeq \mathbb{E}[X^2] - \mathbb{E}^2[X]
 \]
-Note that in order for the variance to be finite, we need both the first and second moments to be finite as well.
+Note that in order for the variance to be finite, we need both the first and second moments to be finite as well. If $X$ and $Y$ are both random variables over the probability space $(\Omega, \mathcal{F}, \mathbb{P})$, then their \emph{covariance} is the expression
+\[
+	Cov[X,Y] \circeq \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]
+\]
+\end{frame}
+\section{Stochastic processes}
+\begin{frame}
+\frametitle{Stochastic processes}
+A stochastic process $\{X_t\}_{t=0}^{T}$ is a \emph{time-indexed collection of random variables} over the probability space $(\Omega, \mathcal{F}, \mathbb{P})$. It can be either discrete, or continuous. The continuous case is often denoted by $X(t)$, or to emphesize the underlying sample space, as $X(\omega, t)$. The set of possible times $T$ is referred to as the \emph{index set}. We call a \emph{single outcome} of the process a \emph{sample function}, it is formed by taking a single possible value of each random variable in the process:
+\[
+	X(\cdot, \omega) : T \mapsto \mathbb{R}
+\]
+When $T$ is interpreted as time, we call the mapping above a \emph{sample path}.
+\end{frame}
+\begin{frame}
+Another way of writing the stochastic process is $X : \Omega \mapsto \mathbb{R}^T$, where $\mathbb{R}^T$ is the space of all possible $\mathbb{R}$-valued functions of any $t \in T$. The \emph{distribution (Law)} of the process $X$ is the measure
+\[
+	\mu \circeq \mathbb{P} \circ X^{-1}
+\]
+\end{frame}
+\section{Filtrations}
+\begin{frame}
+\frametitle{Filtrations}
 \end{frame}
 
 \end{document}
